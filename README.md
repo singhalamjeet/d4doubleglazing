@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# D4 Double Glazing Website
 
-## Getting Started
+A modern, professional double glazing website built with Next.js 14, Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## Features
+
+- ✨ **Modern Design**: Stunning animations with Framer Motion
+- 📱 **Fully Responsive**: Perfect on mobile, tablet, and desktop
+- 🚀 **Next.js 14**: Server-side rendering and optimal performance
+- 🎨 **Tailwind CSS v4**: Modern utility-first CSS framework
+- 💬 **WhatsApp Integration**: Floating contact button with pulse animation
+- 📸 **Instagram Gallery**: Social media integration (widget or API)
+- ♿ **SEO Optimized**: Comprehensive metadata and semantic HTML
+- 🐳 **Docker Ready**: Optimized for Coolify deployment
+
+## Quick Start
+
+### Local Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Copy `env.example.txt` to `.env.local`
+2. Update the following variables:
+   ```env
+   NEXT_PUBLIC_WHATSAPP_NUMBER=+447123456789
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Instagram Gallery Setup
 
-## Learn More
+**Option 1: Widget (Recommended)**
+1. Visit [Elfsight](https://elfsight.com/instagram-feed-insta/) or [LightWidget](https://lightwidget.com/)
+2. Create account and generate embed code
+3. Replace placeholder in `components/SocialGallery.tsx`
 
-To learn more about Next.js, take a look at the following resources:
+**Option 2: API Integration**
+1. Get Instagram Graph API access token
+2. Add to `.env.local`: `INSTAGRAM_ACCESS_TOKEN=your_token`
+3. Uncomment API code in `lib/instagram.ts`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment to Coolify
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Prerequisites
+- Coolify instance
+- Git repository connected to Coolify
 
-## Deploy on Vercel
+### Steps
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Push to Git Repository**
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Configure Coolify**
+   - Create new service in Coolify
+   - Connect your Git repository
+   - Coolify will auto-detect the Dockerfile
+
+3. **Set Environment Variables** in Coolify dashboard:
+   ```
+   NEXT_PUBLIC_WHATSAPP_NUMBER=+447123456789
+   NODE_ENV=production
+   ```
+
+4. **Deploy**
+   - Coolify will build using the Dockerfile
+   - Application will be available at your domain
+
+## Project Structure
+
+```
+d4doubleglazing/
+├── app/
+│   ├── layout.tsx          # Root layout with SEO
+│   ├── page.tsx            # Homepage
+│   └── globals.css         # Global styles
+├── components/
+│   ├── FloatingContact.tsx # WhatsApp button
+│   ├── Header.tsx          # Navigation
+│   ├── Hero.tsx            # Hero section
+│   ├── Services.tsx        # Services grid
+│   ├── WhyChooseUs.tsx     # Benefits section
+│   ├── SocialGallery.tsx   # Instagram feed
+│   └── Footer.tsx          # Footer
+├── lib/
+│   └── content.ts          # Centralized content
+├── Dockerfile              # Docker config
+├── .dockerignore           # Docker exclusions
+└── env.example.txt         # Environment template
+```
+
+## Content Customization
+
+All content is centralized in `lib/content.ts` for easy updates:
+- Services descriptions
+- Why Choose Us points
+- Testimonials
+- SEO metadata
+
+## Build & Test
+
+```bash
+# Production build
+npm run build
+
+# Test production build locally
+npm run start
+
+# Docker build (local testing)
+docker build -t d4doubleglazing:test .
+docker run -p 3000:3000 d4doubleglazing:test
+```
+
+## Technologies
+
+- **Framework**: Next.js 14
+- **Styling**: Tailwind CSS v4
+- **Animation**: Framer Motion
+- **Icons**: Lucide React
+- **Language**: TypeScript
+- **Deployment**: Docker + Coolify
+
+## License
+
+© 2024 D4 Double Glazing. All rights reserved.
