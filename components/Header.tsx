@@ -25,9 +25,9 @@ export default function Header() {
                         <Image
                             src="/logo.jpg"
                             alt="D4 Double Glazing Ltd"
-                            width={180}
-                            height={60}
-                            className="h-12 w-auto object-contain"
+                            width={216}
+                            height={72}
+                            className="h-14 w-auto object-contain"
                             priority
                         />
                     </Link>
