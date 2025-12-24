@@ -50,13 +50,8 @@ export default function Services() {
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
                                 className="relative group"
                             >
-                                {/* Number Badge */}
-                                <div className="absolute -top-3 -left-3 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg z-10">
-                                    <span className="text-white font-bold text-lg">{String(index + 1).padStart(2, '0')}</span>
-                                </div>
-
                                 {/* Card */}
-                                <div className="modern-card h-full p-8 pt-10">
+                                <div className="modern-card h-full p-8">
                                     {/* Icon */}
                                     <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-500 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                                         <IconComponent className="w-7 h-7 text-white" strokeWidth={2.5} />
