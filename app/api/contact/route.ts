@@ -13,34 +13,70 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        // TODO: Configure email service
-        // Options:
-        // 1. Resend (recommended) - https://resend.com
-        // 2. SendGrid - https://sendgrid.com
-        // 3. Nodemailer with SMTP
+        // Send email using Brevo (Sendinblue)
+        const brevoApiKey = process.env.BREVO_API_KEY;
 
-        // Example with Resend (uncomment when configured):
-        /*
-        const { Resend } = require('resend');
-        const resend = new Resend(process.env.RESEND_API_KEY);
+        if (!brevoApiKey) {
+            console.error('BREVO_API_KEY not configured');
+            return Response.json(
+                { error: 'Email service not configured' },
+                { status: 500 }
+            );
+        }
 
-        await resend.emails.send({
-            from: 'D4 Double Glazing <noreply@d4doubleglazing.com>',
-            to: 'info@d4doubleglazing.com',
-            subject: `New Quote Request from ${name}`,
-            html: `
-                <h2>New Contact Form Submission</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Phone:</strong> ${phone}</p>
-                <p><strong>Message:</strong></p>
-                <p>${message}</p>
-            `,
+        const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+            method: 'POST',
+            headers: {
+                'accept': 'application/json',
+                'api-key': brevoApiKey,
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                sender: {
+                    name: 'D4 Double Glazing Website',
+                    email: 'noreply@d4doubleglazing.com'
+                },
+                to: [
+                    {
+                        email: 'info@d4doubleglazing.com',
+                        name: 'D4 Double Glazing'
+                    }
+                ],
+                subject: `New Quote Request from ${name}`,
+                htmlContent: `
+                    <html>
+                        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+                            <div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9fafb; border-radius: 10px;">
+                                <h2 style="color: #2563eb; border-bottom: 3px solid #2563eb; padding-bottom: 10px;">New Contact Form Submission</h2>
+                                
+                                <div style="background-color: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                                    <p style="margin: 10px 0;"><strong style="color: #1f2937;">Name:</strong> ${name}</p>
+                                    <p style="margin: 10px 0;"><strong style="color: #1f2937;">Email:</strong> <a href="mailto:${email}" style="color: #2563eb;">${email}</a></p>
+                                    <p style="margin: 10px 0;"><strong style="color: #1f2937;">Phone:</strong> <a href="tel:${phone}" style="color: #2563eb;">${phone}</a></p>
+                                </div>
+                                
+                                <div style="background-color: white; padding: 20px; border-radius: 8px;">
+                                    <p style="margin: 0 0 10px 0;"><strong style="color: #1f2937;">Message:</strong></p>
+                                    <p style="margin: 0; white-space: pre-wrap;">${message}</p>
+                                </div>
+                                
+                                <p style="margin-top: 20px; font-size: 12px; color: #6b7280;">
+                                    This email was sent from the D4 Double Glazing contact form at ${new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' })}
+                                </p>
+                            </div>
+                        </body>
+                    </html>
+                `,
+            }),
         });
-        */
 
-        // For now, just log the data (remove this in production)
-        console.log('Contact form submission:', { name, email, phone, message });
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Brevo API error:', errorData);
+            throw new Error('Failed to send email via Brevo');
+        }
+
+        console.log('Email sent successfully via Brevo');
 
         return Response.json(
             { message: 'Message sent successfully' },
