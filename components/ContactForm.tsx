@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, User, MessageSquare, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, User, MessageSquare, Send } from 'lucide-react';
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
@@ -18,15 +18,36 @@ export default function ContactForm() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission
-        setTimeout(() => {
-            setSubmitStatus('success');
-            setIsSubmitting(false);
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                setFormData({ name: '', email: '', phone: '', message: '' });
+                setTimeout(() => {
+                    setSubmitStatus('idle');
+                }, 3000);
+            } else {
+                setSubmitStatus('error');
+                setTimeout(() => {
+                    setSubmitStatus('idle');
+                }, 3000);
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            setSubmitStatus('error');
             setTimeout(() => {
                 setSubmitStatus('idle');
-                setFormData({ name: '', email: '', phone: '', message: '' });
             }, 3000);
-        }, 1500);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -85,21 +106,6 @@ export default function ContactForm() {
 
                             <div className="modern-card p-6">
                                 <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                                        <MessageSquare className="w-6 h-6 text-white" />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-bold text-gray-900 mb-1">WhatsApp</h3>
-                                        <a href="https://wa.me/447522200006" target="_blank" rel="noopener noreferrer" className="text-green-600 font-semibold hover:underline">
-                                            +44 7522 200006
-                                        </a>
-                                        <p className="text-sm text-gray-500 mt-1">Chat with us now</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="modern-card p-6">
-                                <div className="flex items-start gap-4">
                                     <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
                                         <Mail className="w-6 h-6 text-white" />
                                     </div>
@@ -109,23 +115,6 @@ export default function ContactForm() {
                                             info@d4doubleglazing.com
                                         </a>
                                         <p className="text-sm text-gray-500 mt-1">24/7 email support</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="modern-card p-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                                        <MapPin className="w-6 h-6 text-white" />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-bold text-gray-900 mb-1">Visit Us</h3>
-                                        <p className="text-gray-700 text-sm">
-                                            1 Wimblington Drive<br />
-                                            Lower Earley, Reading<br />
-                                            Wokingham, RG6 4JG<br />
-                                            United Kingdom
-                                        </p>
                                     </div>
                                 </div>
                             </div>
