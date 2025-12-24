@@ -26,71 +26,22 @@ export default function SocialGallery() {
                     </p>
                 </motion.div>
 
-                {/* Instagram Widget Placeholder */}
+                {/* Instagram Widget */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="max-w-6xl mx-auto"
+                    className="max-w-6xl mx-auto instagram-widget"
                 >
-                    {/* 
-            WIDGET INTEGRATION INSTRUCTIONS:
-            ================================
-            
-            Option 1: Elfsight Instagram Feed
-            ----------------------------------
-            1. Go to https://elfsight.com/instagram-feed-insta/
-            2. Create a free account and connect your Instagram
-            3. Customize the feed (3 columns, 6-9 posts recommended)
-            4. Copy the embed code
-            5. Replace this entire div with the embed code
-            
-            Option 2: LightWidget
-            ----------------------
-            1. Go to https://lightwidget.com/
-            2. Enter your Instagram username
-            3. Customize appearance (3 columns layout)
-            4. Copy the embed code
-            5. Replace this entire div with the embed code
-            
-            Option 3: Manual Instagram API Integration
-            -------------------------------------------
-            If you prefer API integration instead of widgets:
-            1. Uncomment the code in lib/instagram.ts
-            2. Set INSTAGRAM_ACCESS_TOKEN in .env file
-            3. Replace this component with the API version
-            
-            PLACEHOLDER CONTENT BELOW - REMOVE AFTER WIDGET INSTALLATION
-          */}
-
-                    <div className="bg-gradient-to-br from-pink-50 to-purple-50 border-2 border-dashed border-pink-300 rounded-2xl p-12 text-center">
-                        <Instagram className="w-16 h-16 text-pink-500 mx-auto mb-4" />
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">Instagram Widget Placeholder</h3>
-                        <p className="text-gray-600 mb-6 max-w-md mx-auto">
-                            This section will display your Instagram feed. Follow the instructions in the component code to integrate Elfsight or LightWidget.
-                        </p>
-                        <div className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md">
-                            <Instagram className="w-5 h-5 text-pink-500" />
-                            <a
-                                href="https://instagram.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-pink-600 font-semibold hover:text-pink-700"
-                            >
-                                @d4doubleglazing
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Loading Skeleton (for when widget is loading) - Remove after setup */}
-                    <div className="hidden">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {[...Array(6)].map((_, i) => (
-                                <div key={i} className="aspect-square bg-gray-200 rounded-lg animate-pulse"></div>
-                            ))}
-                        </div>
-                    </div>
+                    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                    <iframe
+                        src="//lightwidget.com/widgets/4809f06968ab512fa4a8f9d44d438a97.html"
+                        scrolling="no"
+                        allowTransparency={true}
+                        className="lightwidget-widget"
+                        style={{ width: '100%', border: 0, overflow: 'hidden' }}
+                    ></iframe>
                 </motion.div>
 
                 {/* Social CTA */}
@@ -106,6 +57,6 @@ export default function SocialGallery() {
                     </p>
                 </motion.div>
             </div>
-        </section>
+        </section >
     );
 }
