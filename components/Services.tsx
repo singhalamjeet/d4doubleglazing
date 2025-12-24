@@ -37,7 +37,7 @@ export default function Services() {
                 </motion.div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                     {services.map((service, index) => {
                         const IconComponent = iconMap[service.icon as keyof typeof iconMap];
 
@@ -51,9 +51,9 @@ export default function Services() {
                                 className="relative group"
                             >
                                 {/* Card */}
-                                <div className="modern-card h-full p-8">
+                                <div className="modern-card h-full p-8 text-center">
                                     {/* Icon */}
-                                    <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-500 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                                    <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-500 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform mx-auto">
                                         <IconComponent className="w-7 h-7 text-white" strokeWidth={2.5} />
                                     </div>
 
@@ -64,7 +64,7 @@ export default function Services() {
                                     <p className="text-gray-600 mb-6 leading-relaxed text-sm">{service.description}</p>
 
                                     {/* Features */}
-                                    <ul className="space-y-2.5 mb-6">
+                                    <ul className="space-y-2.5 mb-6 text-left max-w-xs mx-auto">
                                         {service.features.map((feature, featureIndex) => (
                                             <li key={featureIndex} className="flex items-start gap-2.5 text-sm text-gray-700">
                                                 <span className="w-5 h-5 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
