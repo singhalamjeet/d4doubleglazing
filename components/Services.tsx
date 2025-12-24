@@ -31,7 +31,7 @@ export default function Services() {
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                         Our <span className="gradient-text">Services</span>
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto text-center">
+                    <p className="text-lg text-gray-600 max-w-5xl mx-auto text-center whitespace-nowrap">
                         Professional installation of high-quality windows, doors, and conservatories designed for energy efficiency and security.
                     </p>
                 </motion.div>
