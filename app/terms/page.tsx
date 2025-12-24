@@ -194,7 +194,7 @@ export default function TermsPage() {
                             <p className="text-gray-700 mb-2"><strong>D4 Double Glazing</strong></p>
                             <p className="text-gray-700 mb-2">Email: info@d4doubleglazing.com</p>
                             <p className="text-gray-700 mb-2">Phone: +44 - 203 667 2670</p>
-                            <p className="text-gray-700">Address: 1 Wimblington Drive, Lower Earley, Reading, Berkshire, RG6 4JG, United Kingdom</p>
+                            <p className="text-gray-700">Address: 1 Wimblington Drive, Lower Earley, Reading, Wokingham, RG6 4JG, United Kingdom</p>
                         </div>
                     </section>
                 </div>

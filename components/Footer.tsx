@@ -107,7 +107,7 @@ export default function Footer() {
                                     <p className="text-gray-300 text-sm">Visit Us</p>
                                     <p className="text-white font-semibold">
                                         1 Wimblington Drive, Lower Earley<br />
-                                        Reading, Berkshire, RG6 4JG<br />
+                                        Reading, Wokingham, RG6 4JG<br />
                                         United Kingdom
                                     </p>
                                 </div>
@@ -123,7 +123,7 @@ export default function Footer() {
                         <div className="text-center text-gray-400 text-xs">
                             <p className="font-semibold text-gray-300">D4 DOUBLE GLAZING LIMITED</p>
                             <p className="mt-1">Company No. 09950064 • Incorporated on 13 January 2016</p>
-                            <p className="mt-1">Registered Office: 1 Wimblington Drive, Lower Earley, Reading, Berkshire, RG6 4JG</p>
+                            <p className="mt-1">Registered Office: 1 Wimblington Drive, Lower Earley, Reading, Wokingham, RG6 4JG</p>
                         </div>
 
                         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
