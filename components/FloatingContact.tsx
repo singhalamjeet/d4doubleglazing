@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 export default function FloatingContact() {
     const [isExpanded, setIsExpanded] = useState(false);
-    const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+447123456789';
+    const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+447522200006';
     const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\+/g, '')}`;
 
     return (

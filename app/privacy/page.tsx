@@ -152,7 +152,7 @@ export default function PrivacyPage() {
                         <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6">
                             <p className="text-gray-700 mb-2"><strong>D4 Double Glazing</strong></p>
                             <p className="text-gray-700 mb-2">Email: info@d4doubleglazing.com</p>
-                            <p className="text-gray-700 mb-2">Phone: +44 7123 456789</p>
+                            <p className="text-gray-700 mb-2">Phone: +44 7522 200006</p>
                             <p className="text-gray-700">Address: Your Town, Your County, United Kingdom</p>
                         </div>
                     </section>
