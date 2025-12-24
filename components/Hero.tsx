@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Phone, Shield, Leaf, Award } from 'lucide-react';
-import Link from 'next/link';
+import { ArrowRight, Shield, Leaf, Award } from 'lucide-react';
 
 export default function Hero() {
     return (
@@ -94,25 +93,14 @@ export default function Hero() {
                             transition={{ duration: 0.6, delay: 0.4 }}
                             className="flex flex-col sm:flex-row gap-4"
                         >
-                            <Link href="/contact">
-                                <motion.button
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all group"
-                                >
-                                    <Phone className="w-5 h-5" />
-                                    Get Your Free Quote
-                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                </motion.button>
-                            </Link>
-
                             <motion.a
                                 href="#gallery"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="inline-flex items-center justify-center gap-2 bg-white border-2 border-gray-200 text-gray-700 font-bold px-8 py-4 rounded-2xl hover:border-gray-300 hover:bg-gray-50 transition-all"
+                                className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all border-2 border-gray-200 group"
                             >
-                                View Our Work
+                                See Our Work
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </motion.a>
                         </motion.div>
                     </div>

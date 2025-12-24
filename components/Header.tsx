@@ -48,16 +48,15 @@ export default function Header() {
 
                     {/* CTA Button */}
                     <div className="hidden md:block">
-                        <Link href="/contact">
-                            <motion.button
-                                whileHover={{ scale: 1.03 }}
-                                whileTap={{ scale: 0.97 }}
-                                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold px-6 py-2.5 rounded-full hover:shadow-lg transition-all"
-                            >
-                                <Phone className="w-4 h-4" />
-                                Get Quote
-                            </motion.button>
-                        </Link>
+                        <motion.a
+                            href="#footer-contact"
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.97 }}
+                            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold px-6 py-2.5 rounded-full hover:shadow-lg transition-all"
+                        >
+                            <Phone className="w-4 h-4" />
+                            Contact Us
+                        </motion.a>
                     </div>
 
                     {/* Mobile Menu Button */}
