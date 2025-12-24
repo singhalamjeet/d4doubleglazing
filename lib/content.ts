@@ -52,8 +52,8 @@ export const whyChooseUs = [
         icon: 'FileText',
     },
     {
-        title: 'FENSA Registered',
-        description: 'All installations are FENSA registered and come with comprehensive guarantees for your peace of mind.',
+        title: 'Quality Assured',
+        description: 'All installations come with comprehensive guarantees and certifications for your complete peace of mind.',
         icon: 'Award',
     },
     {

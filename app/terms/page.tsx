@@ -134,9 +134,9 @@ export default function TermsPage() {
                     </section>
 
                     <section className="mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">8. FENSA Certification</h2>
+                        <h2 className="text-3xl font-bold text-gray-900 mb-4">8. Building Regulations Compliance</h2>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                            As a FENSA-registered company, we comply with all relevant Building Regulations. You will receive a FENSA certificate upon completion, which you must retain for future property transactions.
+                            We comply with all relevant Building Regulations for window and door installations. You will receive appropriate certification upon completion, which you must retain for future property transactions.
                         </p>
                     </section>
 

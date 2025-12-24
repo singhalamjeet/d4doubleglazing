@@ -30,7 +30,7 @@ export default function Hero() {
                             className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-full px-4 py-2 mb-6"
                         >
                             <Award className="w-4 h-4 text-blue-600" />
-                            <span className="text-blue-700 text-sm font-semibold">FENSA Registered & Trusted Locally</span>
+                            <span className="text-blue-700 text-sm font-semibold">Trusted Locally & Professionally Certified</span>
                         </motion.div>
 
                         {/* Main Heading */}
@@ -165,7 +165,7 @@ export default function Hero() {
                                     <div className="flex items-center gap-4 text-sm text-gray-600">
                                         <div className="flex items-center gap-2">
                                             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                                            <span>FENSA</span>
+                                            <span>Certified</span>
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <div className="w-2 h-2 bg-green-500 rounded-full"></div>

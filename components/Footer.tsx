@@ -123,11 +123,11 @@ export default function Footer() {
                         </p>
                         <div className="flex items-center gap-6">
                             <div className="flex items-center gap-3 text-sm text-gray-400">
-                                <span className="px-3 py-1 bg-blue-600/20 border border-blue-500/30 rounded text-blue-300 font-semibold">
-                                    FENSA Registered
-                                </span>
                                 <span className="px-3 py-1 bg-green-600/20 border border-green-500/30 rounded text-green-300 font-semibold">
-                                    TrustMark
+                                    TrustMark Certified
+                                </span>
+                                <span className="px-3 py-1 bg-blue-600/20 border border-blue-500/30 rounded text-blue-300 font-semibold">
+                                    Fully Insured
                                 </span>
                             </div>
                         </div>

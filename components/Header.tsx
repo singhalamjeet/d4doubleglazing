@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,13 +21,15 @@ export default function Header() {
             <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-3 group">
-                        <div className="w-11 h-11 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                            <span className="text-white font-bold text-xl">D4</span>
-                        </div>
-                        <span className="hidden sm:block text-xl font-bold text-gray-900">
-                            D4 Double Glazing
-                        </span>
+                    <Link href="/" className="flex items-center group">
+                        <Image
+                            src="/logo.jpg"
+                            alt="D4 Double Glazing Ltd"
+                            width={180}
+                            height={60}
+                            className="h-12 w-auto object-contain"
+                            priority
+                        />
                     </Link>
 
                     {/* Desktop Navigation */}
