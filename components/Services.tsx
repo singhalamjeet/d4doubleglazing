@@ -74,12 +74,6 @@ export default function Services() {
                                             </li>
                                         ))}
                                     </ul>
-
-                                    {/* Learn More Link */}
-                                    <div className="flex items-center gap-2 text-blue-600 font-semibold text-sm group-hover:gap-3 transition-all">
-                                        <span>Learn More</span>
-                                        <ArrowRight className="w-4 h-4" />
-                                    </div>
                                 </div>
                             </motion.div>
                         );
