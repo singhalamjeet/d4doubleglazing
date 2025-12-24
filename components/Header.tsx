@@ -23,7 +23,7 @@ export default function Header() {
                     {/* Logo */}
                     <Link href="/" className="flex items-center group">
                         <Image
-                            src="/logo.jpg"
+                            src="/logo.png"
                             alt="D4 Double Glazing Ltd"
                             width={216}
                             height={72}
