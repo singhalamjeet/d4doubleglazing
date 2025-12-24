@@ -33,13 +33,13 @@ export default function WhyChooseUs() {
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                         Why Choose <span className="gradient-text">D4 Double Glazing</span>
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-gray-600 max-w-4xl mx-auto text-center">
                         Quality products, expert installation, and customer service you can trust
                     </p>
                 </motion.div>
 
                 {/* Benefits Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                     {whyChooseUs.map((benefit, index) => {
                         const IconComponent = iconMap[benefit.icon as keyof typeof iconMap];
 

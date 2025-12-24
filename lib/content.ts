@@ -52,16 +52,6 @@ export const whyChooseUs = [
         icon: 'FileText',
     },
     {
-        title: 'Quality Assured',
-        description: 'All installations come with comprehensive guarantees and certifications for your complete peace of mind.',
-        icon: 'Award',
-    },
-    {
-        title: 'Local & Trusted',
-        description: 'A local business with a reputation built on quality workmanship and satisfied customers. Many of our customers are repeat clients.',
-        icon: 'Users',
-    },
-    {
         title: 'Expert Installation',
         description: 'Our skilled installers have years of experience and treat every home with the care and respect it deserves.',
         icon: 'CheckCircle',
