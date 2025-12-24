@@ -2,12 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone, Shield, Leaf, Award } from 'lucide-react';
+import Link from 'next/link';
 
-interface HeroProps {
-    onOpenContact: () => void;
-}
-
-export default function Hero({ onOpenContact }: HeroProps) {
+export default function Hero() {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
             {/* Subtle Background Pattern */}
@@ -97,16 +94,17 @@ export default function Hero({ onOpenContact }: HeroProps) {
                             transition={{ duration: 0.6, delay: 0.4 }}
                             className="flex flex-col sm:flex-row gap-4"
                         >
-                            <motion.button
-                                onClick={onOpenContact}
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all group"
-                            >
-                                <Phone className="w-5 h-5" />
-                                Get Your Free Quote
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </motion.button>
+                            <Link href="/contact">
+                                <motion.button
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all group"
+                                >
+                                    <Phone className="w-5 h-5" />
+                                    Get Your Free Quote
+                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                </motion.button>
+                            </Link>
 
                             <motion.a
                                 href="#gallery"

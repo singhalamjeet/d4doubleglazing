@@ -6,11 +6,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-interface HeaderProps {
-    onOpenContact: () => void;
-}
-
-export default function Header({ onOpenContact }: HeaderProps) {
+export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const navLinks = [
@@ -52,15 +48,16 @@ export default function Header({ onOpenContact }: HeaderProps) {
 
                     {/* CTA Button */}
                     <div className="hidden md:block">
-                        <motion.button
-                            onClick={onOpenContact}
-                            whileHover={{ scale: 1.03 }}
-                            whileTap={{ scale: 0.97 }}
-                            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold px-6 py-2.5 rounded-full hover:shadow-lg transition-all"
-                        >
-                            <Phone className="w-4 h-4" />
-                            Get Quote
-                        </motion.button>
+                        <Link href="/contact">
+                            <motion.button
+                                whileHover={{ scale: 1.03 }}
+                                whileTap={{ scale: 0.97 }}
+                                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold px-6 py-2.5 rounded-full hover:shadow-lg transition-all"
+                            >
+                                <Phone className="w-4 h-4" />
+                                Get Quote
+                            </motion.button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
