@@ -106,7 +106,8 @@ export default function Footer() {
                                 <div>
                                     <p className="text-gray-300 text-sm">Visit Us</p>
                                     <p className="text-white font-semibold">
-                                        Your Town, Your County<br />
+                                        1 Wimblington Drive, Lower Earley<br />
+                                        Reading, Berkshire, RG6 4JG<br />
                                         United Kingdom
                                     </p>
                                 </div>
@@ -117,18 +118,27 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-700 pt-8">
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-gray-400 text-sm text-center md:text-left">
-                            © {currentYear} D4 Double Glazing. All rights reserved.
-                        </p>
-                        <div className="flex items-center gap-6">
-                            <div className="flex items-center gap-3 text-sm text-gray-400">
-                                <span className="px-3 py-1 bg-green-600/20 border border-green-500/30 rounded text-green-300 font-semibold">
-                                    TrustMark Certified
-                                </span>
-                                <span className="px-3 py-1 bg-blue-600/20 border border-blue-500/30 rounded text-blue-300 font-semibold">
-                                    Fully Insured
-                                </span>
+                    <div className="flex flex-col gap-4">
+                        {/* Company Registration */}
+                        <div className="text-center text-gray-400 text-xs">
+                            <p className="font-semibold text-gray-300">D4 DOUBLE GLAZING LIMITED</p>
+                            <p className="mt-1">Company No. 09950064 • Incorporated on 13 January 2016</p>
+                            <p className="mt-1">Registered Office: 1 Wimblington Drive, Lower Earley, Reading, Berkshire, RG6 4JG</p>
+                        </div>
+
+                        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                            <p className="text-gray-400 text-sm text-center md:text-left">
+                                © {currentYear} D4 Double Glazing. All rights reserved.
+                            </p>
+                            <div className="flex items-center gap-6">
+                                <div className="flex items-center gap-3 text-sm text-gray-400">
+                                    <span className="px-3 py-1 bg-green-600/20 border border-green-500/30 rounded text-green-300 font-semibold">
+                                        TrustMark Certified
+                                    </span>
+                                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-500/30 rounded text-blue-300 font-semibold">
+                                        Fully Insured
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
