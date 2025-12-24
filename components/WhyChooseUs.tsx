@@ -15,7 +15,7 @@ const iconMap = {
 
 export default function WhyChooseUs() {
     return (
-        <section id="why-choose-us" className="py-24 bg-white">
+        <section id="why-choose-us" className="py-32 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <motion.div
@@ -26,7 +26,7 @@ export default function WhyChooseUs() {
                     className="text-center mb-16"
                 >
                     <div className="inline-block mb-4">
-                        <span className="text-sm font-bold text-blue-600 bg-blue-50 px-4 py-2 rounded-full uppercase tracking-wide">
+                        <span className="text-base font-bold text-blue-600 bg-blue-50 px-4 py-2 rounded-full uppercase tracking-wide">
                             Our Advantages
                         </span>
                     </div>
